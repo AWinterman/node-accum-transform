@@ -1,6 +1,6 @@
 {
   "name": "accum-transform",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "concat-stream as a transform stream",
   "main": "index.js",
   "scripts": {
@@ -19,5 +19,4 @@
     "type": "git",
     "url": "https://github.com/AWinterman/node-accum-transform.git"
   }
-
 }
