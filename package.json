@@ -1,6 +1,6 @@
 {
   "name": "accum-transform",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "concat-stream as a transform stream",
   "main": "index.js",
   "scripts": {
