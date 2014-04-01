@@ -11,7 +11,7 @@
     "stream"
   ],
   "author": "Andrew Winterman",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "through2": "^0.4.1"
   },
