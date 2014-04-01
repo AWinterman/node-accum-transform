@@ -6,6 +6,7 @@ decodeString_true(assert)
 objectMode(assert)
 
 function decodeString_false(assert) {
+  var options = {decodeStrings: false}
   var stream = accum({decodeStrings: false})
 
   stream.write('hello')
@@ -15,10 +16,13 @@ function decodeString_false(assert) {
   stream.on('data', function(data) {
     assert.deepEqual(data, new Buffer('hello or something'))
   })
+
+  console.log('ok:', options)
 }
 
 function decodeString_true(assert) {
-  var stream = accum({decodeStrings: true, encodig: 'utf8'})
+  var options = {decodeStrings: true}
+  var stream = accum(options)
 
   stream.write('hello')
   stream.write(' or something')
@@ -27,10 +31,13 @@ function decodeString_true(assert) {
   stream.on('data', function(data) {
     assert.deepEqual(data, new Buffer('hello or something'))
   })
+
+  console.log('ok:', options)
 }
 
 function objectMode(assert) {
-  var stream = accum({objectMode: true})
+  var options = {objectMode: true}
+  var stream = accum(options)
 
   stream.write('hello')
   stream.write(' or something')
@@ -39,4 +46,6 @@ function objectMode(assert) {
   stream.on('data', function(data) {
     assert.deepEqual(data, ['hello', ' or something'])
   })
+
+  console.log('ok:', options)
 }
