@@ -5,6 +5,8 @@ module.exports = accum
 function accum(options) {
   var data = []
 
+  options = options || {}
+
   var stream = through(options, write, end)
 
   return stream
@@ -16,7 +18,7 @@ function accum(options) {
 
   function end(callback) {
     emit = options.objectMode ? data :
-      options.decodeString ? Buffer.concat(data) : data.join('')
+      !options.decodeString ? data.join('') : Buffer.concat(data)
 
     stream.push(emit)
     callback()
